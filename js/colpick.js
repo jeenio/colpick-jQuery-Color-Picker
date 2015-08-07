@@ -40,7 +40,9 @@ For usage and examples: colpick.com/plugin
 					.eq(6).val(Math.round(hsb.b)).end();
 			},
 			fillHexFields = function (hsb, cal) {
-				$(cal).data('colpick').fields.eq(0).val(hsbToHex(hsb));
+				if ($(cal).data('colpick').fields.eq(0).val() != hsbToHex(hsb)) {
+					$(cal).data('colpick').fields.eq(0).val(hsbToHex(hsb));
+				}
 			},
 			//Set the round selector position
 			setSelector = function (hsb, cal) {
